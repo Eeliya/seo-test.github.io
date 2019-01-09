@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ page.title }}</title>
+  <meta name="description"
+        content="{{ page.description }}">
+
+  <link href="styles/reset.css" rel="stylesheet">
+  <link href="styles/main.css" rel="stylesheet">
+
+  <script>
+    var page = {
+      title: 'Head On-The-Fly | SEO Test',
+      description: 'A page that renders head and body on the fly',
+      content: '  <section>\n' +
+        '    <h1>Head On-The-Fly</h1>\n' +
+        '    <p>This page provides its head and content on-the-fly. ' +
+        'So in the google search result, you probably won\'t see the proper title and description.</p>\n' +
+        '    <p>\n' +
+        '      <a href="./">Go Back</a>\n' +
+        '    </p>\n' +
+        '  </section>'
+    };
+
+    window.addEventListener('load', function () {
+      document.title = page.title;
+      document.head.querySelector('[name="description"]').setAttribute('content', page.description);
+      document.getElementById('app').innerHTML = page.content;
+    });
+  </script>
+</head>
+<body>
+
+<main id="app">
+  <p>Please wait... the page content will be available ASAP.</p>
+</main>
+
+</body>
+</html>

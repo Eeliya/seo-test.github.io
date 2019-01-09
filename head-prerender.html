@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Head Pre-render | SEO Test</title>
+  <meta name="description"
+        content="A page that pre-render title and description and provide the page content on the client-side">
+
+  <link href="styles/reset.css" rel="stylesheet">
+  <link href="styles/main.css" rel="stylesheet">
+
+  <script>
+    var content = '  <section>\n' +
+      '    <h1>Head Pre-render </h1>\n' +
+      '    <p>This pre-renders the title and description meta tag, but the content of the page is being provide by Javascript\n' +
+      '      at window load event.</p>\n' +
+      '    <p>\n' +
+      '      <a href="./">Go Back</a>\n' +
+      '    </p>\n' +
+      '  </section>';
+
+    window.addEventListener('load', function () {
+      document.getElementById('app').innerHTML = content;
+    });
+  </script>
+</head>
+<body>
+
+<main id="app">
+ <p>Please wait... the page content will be available ASAP.</p>
+</main>
+
+</body>
+</html>

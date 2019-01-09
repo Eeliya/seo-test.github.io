@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono:300,400,700');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Overpass Mono', monospace;
+  font-size: 15px;
+  line-height: 1.28;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+p {
+  margin: 10px 0;
+  text-align: justify;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: #27f;
+}
+
+a:hover {
+  color: #39f;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section {
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid #333;
+}
+
+section > h1, section > h2 {
+  margin-bottom: 20px;
+}
