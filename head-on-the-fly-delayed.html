@@ -11,24 +11,27 @@
 
   <script>
     var page = {
-      title: 'Head On-The-Fly Delayed | SEO Test',
-      description: 'A page that renders head and body on the fly after a short delay',
-      content: '  <section>\n' +
-        '    <h1>Head Pre-render </h1>\n' +
-        '    <p>This page provides its head and content on-the-fly <strong>at one second</strong> after window load event. ' +
-        'So in the google search result, you probably won\'t see the proper title and description.</p>\n' +
-        '    <p>\n' +
-        '      <a href="./">Go Back</a>\n' +
-        '    </p>\n' +
-        '  </section>'
+      delay: 1000,
+      title: 'Head On-The-Fly Delayed, 1 second | SEO Test',
+      description: 'A page that renders head and body on the fly after a short delay (1 second)',
+      content: '<section>' +
+        '<h1>Head On-The-Fly Delayed, 1 second</h1>' +
+        '<p>This page provides its head and content on-the-fly <strong>at one second</strong> after window load event. ' +
+        'In the Google search result, you probably won\'t see the proper title and description.</p>' +
+        '<p>' +
+        '<a href="./">Go Back</a>' +
+        '</p>' +
+        '</section>',
+      result: '<section ui-success><h2>Result</h2>' +
+        '<p>This page has been indexed on 2019-01-09 <strong>successfully.</strong></p></section>'
     };
 
     window.addEventListener('load', function () {
       setTimeout(function () {
         document.title = page.title;
         document.head.querySelector('[name="description"]').setAttribute('content', page.description);
-        document.getElementById('app').innerHTML = page.content;
-      }, 1000);
+        document.getElementById('app').innerHTML = page.content + page.result;
+      }, page.delay);
     });
   </script>
 </head>

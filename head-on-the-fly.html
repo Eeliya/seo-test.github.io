@@ -13,20 +13,22 @@
     var page = {
       title: 'Head On-The-Fly | SEO Test',
       description: 'A page that renders head and body on the fly',
-      content: '  <section>\n' +
-        '    <h1>Head On-The-Fly</h1>\n' +
-        '    <p>This page provides its head and content on-the-fly. ' +
-        'So in the google search result, you probably won\'t see the proper title and description.</p>\n' +
-        '    <p>\n' +
-        '      <a href="./">Go Back</a>\n' +
-        '    </p>\n' +
-        '  </section>'
+      content: '  <section>' +
+        '<h1>Head On-The-Fly</h1>' +
+        '<p>This page provides its head and content on-the-fly. ' +
+        'In the Google search result, you probably won\'t see the proper title and description.</p>' +
+        '<p>' +
+        '<a href="./">Go Back</a>' +
+        '</p>' +
+        '</section>',
+      result: '<section ui-success><h2>Result</h2>' +
+        '<p>This page has been indexed on 2019-01-09 <strong>successfully.</strong></p></section>'
     };
 
     window.addEventListener('load', function () {
       document.title = page.title;
       document.head.querySelector('[name="description"]').setAttribute('content', page.description);
-      document.getElementById('app').innerHTML = page.content;
+      document.getElementById('app').innerHTML = page.content + page.result;
     });
   </script>
 </head>

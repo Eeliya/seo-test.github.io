@@ -16,7 +16,8 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 1.7em;
+  line-height: 1.2;
   font-weight: bold;
 }
 
@@ -51,4 +52,15 @@ section {
 
 section > h1, section > h2 {
   margin-bottom: 20px;
+}
+
+section > p:last-child {
+  margin-bottom: 0;
+}
+
+[ui-success] {
+  color: #10893E;
+  border-color: #10893E;
+  border-width: 2px;
+  padding: 29px;
 }

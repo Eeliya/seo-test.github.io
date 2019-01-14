@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ page.title #Delayed }}</title>
+  <meta name="description"
+        content="{{ page.description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="styles/reset.css" rel="stylesheet">
+  <link href="styles/main.css" rel="stylesheet">
+
+  <script>
+    var page = {
+      delay: 4000,
+      title: 'Head On-The-Fly Delayed, 4 seconds | SEO Test',
+      description: 'A page that renders head and body on the fly after a short delay (4 second)',
+      content: '  <section>\n' +
+        '    <h1>Head On-The-Fly Delayed, 4 second</h1>\n' +
+        '    <p>This page provides its head and content on-the-fly <strong>at four second</strong> after window load event. ' +
+        'In the Google search result, you probably won\'t see the proper title and description.</p>\n' +
+        '    <p>\n' +
+        '      <a href="./">Go Back</a>\n' +
+        '    </p>\n' +
+        '  </section>'
+    };
+
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        document.title = page.title;
+        document.head.querySelector('[name="description"]').setAttribute('content', page.description);
+        document.getElementById('app').innerHTML = page.content;
+      }, page.delay);
+    });
+  </script>
+</head>
+<body>
+
+<main id="app">
+  <p>Please wait... the page content will be available ASAP.</p>
+</main>
+
+</body>
+</html>

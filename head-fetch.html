@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ page.title #Delayed }}</title>
+  <meta name="description"
+        content="{{ page.description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="styles/reset.css" rel="stylesheet">
+  <link href="styles/main.css" rel="stylesheet">
+
+  <script>
+    window.addEventListener('load', function () {
+      var xhttp;
+      if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...
+        xhttp = new XMLHttpRequest();
+      } else if (window.ActiveXObject) { // IE 6 and older
+        xhttp = new ActiveXObject('Microsoft.XMLHTTP');
+      }
+      xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+          var page = JSON.parse(this.responseText);
+          document.title = page.title;
+          document.head.querySelector('[name="description"]').setAttribute('content', page.description);
+          document.getElementById('app').innerHTML = page.content + page.result;
+        }
+      };
+      xhttp.open('GET', 'head-fetch.json', true);
+      xhttp.send();
+
+    });
+  </script>
+</head>
+<body>
+
+<main id="app">
+  <p>Please wait... the page content will be available ASAP.</p>
+</main>
+
+</body>
+</html>
