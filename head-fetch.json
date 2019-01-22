@@ -1,6 +1,6 @@
 {
   "title": "Head Fetch | SEO Test",
-  "description": "A page that renders fetch its head and content.",
+  "description": "A page that fetch its head and content via AJAX.",
   "content": "<section><h1>Head Fetch</h1><p>This page provides its head and content via <strong>AJAX - GET</strong> at window load event. In the Google search result, you probably won't see the proper title and description.</p><p><a href='./'>Go Back</a></p></section>",
   "result": ""
 }
