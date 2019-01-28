@@ -58,9 +58,18 @@ section > p:last-child {
   margin-bottom: 0;
 }
 
+[ui-success], [ui-unsuccess] {
+
+  border-width: 2px;
+  padding: 29px;
+}
+
 [ui-success] {
   color: #10893E;
   border-color: #10893E;
-  border-width: 2px;
-  padding: 29px;
+}
+
+[ui-unsuccess] {
+  color: #e82907;
+  border-color: #e82907;
 }

@@ -2,5 +2,7 @@
   "title": "Head Fetch | SEO Test",
   "description": "A page that fetch its head and content via AJAX.",
   "content": "<section><h1>Head Fetch</h1><p>This page provides its head and content via <strong>AJAX - GET</strong> at window load event. In the Google search result, you probably won't see the proper title and description.</p><p><a href='./'>Go Back</a></p></section>",
-  "result": ""
+  "result": [
+    "<section ui-unsuccess><h2>Result</h2><p>This page has been indexed on 2019-01-18 <strong>unsuccessfully.</strong></p><p>Page content is shown in Google search result instead of description meta tag's content.</p></section>"
+  ]
 }

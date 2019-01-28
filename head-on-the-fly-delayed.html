@@ -22,15 +22,18 @@
         '<a href="./">Go Back</a>' +
         '</p>' +
         '</section>',
-      result: '<section ui-success><h2>Result</h2>' +
-        '<p>This page has been indexed on 2019-01-09 <strong>successfully.</strong></p></section>'
+      result: [
+        '<section ui-success><h2>Result</h2>' +
+        '<p>This page has been indexed on 2019-01-09 <strong>successfully.</strong></p></section>',
+        '<section ui-success><h2>Result</h2>' +
+        '<p>This page has been indexed on 2019-01-14 <strong>successfully.</strong></p></section>']
     };
 
     window.addEventListener('load', function () {
       setTimeout(function () {
         document.title = page.title;
         document.head.querySelector('[name="description"]').setAttribute('content', page.description);
-        document.getElementById('app').innerHTML = page.content + page.result;
+        document.getElementById('app').innerHTML = page.content + page.result.join('');
       }, page.delay);
     });
   </script>
